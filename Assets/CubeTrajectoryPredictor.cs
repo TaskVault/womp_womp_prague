@@ -35,7 +35,9 @@ public class CubeTrajectoryPredictor : MonoBehaviour
 
             if (noiseFactor > 0 && minMaxSlider != null)
             {
-                float scaledNoiseFactor = noiseFactor * minMaxSlider.value;
+                // float scaledNoiseFactor = noiseFactor * minMaxSlider.value;
+                float scaledNoiseFactor = noiseFactor * 100;
+
 
                 predictedPosition += new Vector3(
                     Random.Range(-scaledNoiseFactor, scaledNoiseFactor),
@@ -60,7 +62,7 @@ Vector3 PredictLandingPosition()
     Vector3 gravity = Physics.gravity;
     float timeStep = Time.fixedDeltaTime;
     int maxSteps = 9999; // Adjust as needed to ensure the prediction runs long enough
-    float yOffset = -0.5f; // Adjust this value to determine how far below the object the prediction should be
+    float yOffset = -0.7f; // Adjust this value to determine how far below the object the prediction should be
 
     for (int i = 0; i < maxSteps; i++)
     {
