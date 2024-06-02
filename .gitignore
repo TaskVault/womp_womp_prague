@@ -35,3 +35,5 @@ sysinfo.txt
 # Build files
 *.apk
 *.unitypackage
+
+/brain_watcher/brain_watch/node_modules/*
